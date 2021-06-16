@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>
+      Index
+    </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+      form {
+        width: 250px;
+        height: 250px;
+        background-color: #F8F8F8;
+        padding-left: 100px;
+        padding-top: 100px;
+        font-family: "Bebas Neue";
+}
+
+button{
+        border-radius: 10px;
+        background-color: #33A845;
+        color: white;
+        border: none;
+}
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <input type="radio" name="License" id="LicensePlan#1" value="LicensePlan#1">LicensePlan#1 $13 per license<br><br>
+
+      <input type="radio" name="License" id="LicensePlan#2" value="LicensePlan#2">LicensePlan#2 $22 per license<br><br>
+
+      <input type="radio" name="Licemse" id="LicensePlan#3" value="LicensePlan#3">LicensePlan#3 34 per license<br><br>
+      
+      Number of Licenses<input type="number" name="" id="NumberLicenses" value="0"><br><br>
+      
+      <div id="total" style="color:blue; font-size:18px;">
+    </div>
+
+      <button type="button" onclick="display()">
+        Buy Now
+      </button><br><br>
+      <div id="disp" style="color:blue; font-size:10px;">
+    </div>
+    </form>
+    <br>
+  </body>
+  <script>
+    function display() {
+      if (document.getElementById('LicensePlan#1').checked) {
+        document.getElementById("disp").innerHTML = "Selected Plan: #1";
+        document.getElementById("total").innerHTML = "Total: $" + document.getElementById("NumberLicenses").value*13 +" US";
+      } else if (document.getElementById('LicensePlan#2').checked) {
+        document.getElementById("disp").innerHTML = "Selected Plan: #2";
+        document.getElementById("total").innerHTML = "Total: $" + document.getElementById("NumberLicenses").value*22 +" US";
+      } else if (document.getElementById('LicensePlan#3').checked) {
+        document.getElementById("disp").innerHTML = "Selected Plan: #3";
+        document.getElementById("total").innerHTML = "Total: $" + document.getElementById("NumberLicenses").value*34 +" US";
+      } else {
+        document.getElementById("disp").innerHTML = "No one selected";
+      }
+    }
+
+  </script>
+
+</html>
